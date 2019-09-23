@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Login from './conponents/Login'
+import Profile from './conponents/Profile'
+import TicketForm from './conponents/TicketForm'
+
+class App extends Component {
+  state = {
+    page: 'login'
+  }
+
+  componentDidMount() {
+    if (localStorage.token) {
+      this.redirect('profile')
+    }
+  }
+
+  redirect = (page) => {
+    this.setState({ page: page})
+  }
+
+
+
+  render() {
+
+    switch (this.state.page) {
+      case 'login':
+        return <Login redirect={this.redirect}/>
+      case 'profile':
+        return <Profile />
+      case 'ticketform':
+        return <TicketForm />
+      default:
+        return <Login />
+    }
+
+
+
+
+  }
 }
 
 export default App;
