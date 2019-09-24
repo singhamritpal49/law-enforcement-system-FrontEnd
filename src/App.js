@@ -27,7 +27,7 @@ class App extends Component {
       case 'login':
         return <Login redirect={this.redirect}/>
       case 'profile':
-        return <Profile />
+        return <Profile redirect={this.redirect} />
       case 'ticketform':
         return <TicketForm />
       default:

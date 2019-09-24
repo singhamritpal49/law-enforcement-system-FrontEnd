@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
+import TicketForm from './TicketForm'
+import Tickets from './Tickets'
+
+
+
 class Profile extends Component {
     state = {
-        name: ''
+        name: '',
+        officerid: '',
+        tickets: []
+
     }
 
     componentDidMount() {
@@ -11,25 +19,39 @@ class Profile extends Component {
                 "Authorization": `Bearer ${localStorage.token}`
             }
         })
-        .then(data => data.json())
-        .then(user => this.setState({name: user.first_name}))
+            .then(data => data.json())
+            .then(user => this.setState({
+                name: user.first_name,
+                officerid: user.id
+            }))
+
+            
     }
-    
+
+    handleClick = () => {
+        localStorage.clear()
+        this.props.redirect('login')
+    }
 
     render() {
-        
+        // console.log(this.state);
         return (
             <div>
-                 {
-                     this.state.name ?
-                     <h1>Welcome Officer {this.state.name} </h1> :
-
-                    //  <h1 className="loader" id="login"></h1>
-                    <div id="login"class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                 }
-                {/* <button>Log Out</button> */}
+                {
+                    this.state.name ?
+                        <h1>Welcome Officer {this.state.name} </h1> :
+                        <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                }
+                <button onClick={this.handleClick}>Log Out</button>
+                <TicketForm officerid={this.state.officerid} />
+                {/* <Tickets officerid={this.state.officerid} /> */}
             </div>
+
+
+
+
         );
+
     }
 }
 
