@@ -1,7 +1,6 @@
-import Select from 'react-select';
-
+// import Select from 'react-select';
 import React, { Component } from 'react';
-
+import SearchCivilian from './SearchCivilian'
 class TicketForm extends Component {
     state = {
         date: '',
@@ -10,9 +9,7 @@ class TicketForm extends Component {
         vehicle_license_plate: '',
         ticket_type: '',
         descripition: '',
-        civilians: [],
-        search: ''
-        
+        civilians: []
     }
 
     componentDidMount() {
@@ -23,36 +20,34 @@ class TicketForm extends Component {
             }))
     }
 
-
+    handleCivilian = (ssn) => {
+        this.state.civilians.find(civilian => {
+            //  civilian.social_security_number == ssn
+            if (civilian.social_security_number === ssn) {
+                return civilian.id
+            }
+        })
+    }
 
     render() {
-        console.log(this.state)
+        // console.log(this.props)
 
         let curr = new Date();
         curr.setDate(curr.getDate());
         let date = curr.toISOString().substr(0, 10);
-
-        // const civilianss = this.state.civilians
-
-        const civilians = [
-            { label: this.state.civilians.name, value: this.state.civilians.id },
-          ];
-
-        
-      
-
+        // console.log(this.props)
         return (
 
 
             <div>
                 <div>
-                    
 
                 </div>
                 <form id="login">
-                {/* <Select options={civilians} /> */}
+                    <h1>Search Using Name or SSN</h1> <SearchCivilian handleCivilian={this.handleCivilian} civilians={this.state.civilians} />
+                    {/* <Select options={civilians} /> */}
 
-                    <input type="hidden" officer_id={this.props.officerid} />
+                    <input type="hidden" civilian_id={this.handleCivilian()} />
                     <label for="date">Date </label>
                     <input type="date" name="date" id="date" defaultValue={date} />
                     <br />

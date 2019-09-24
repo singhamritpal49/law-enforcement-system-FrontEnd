@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
 import TicketForm from './TicketForm'
-import Tickets from './Tickets'
+// import Tickets from './Tickets'
 
 
 
@@ -25,7 +25,7 @@ class Profile extends Component {
                 officerid: user.id
             }))
 
-            
+
     }
 
     handleClick = () => {
@@ -42,8 +42,8 @@ class Profile extends Component {
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
-                <button onClick={this.handleClick}>Log Out</button>
                 <TicketForm officerid={this.state.officerid} />
+                <button onClick={this.handleClick}>Log Out</button>
                 {/* <Tickets officerid={this.state.officerid} /> */}
             </div>
 
