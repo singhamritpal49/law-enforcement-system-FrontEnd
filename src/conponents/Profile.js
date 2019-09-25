@@ -10,7 +10,6 @@ class Profile extends Component {
         name: '',
         officerid: '',
         tickets: []
-
     }
 
     componentDidMount() {
@@ -24,8 +23,6 @@ class Profile extends Component {
                 name: user.first_name,
                 officerid: user.id
             }))
-
-
     }
 
     handleClick = () => {

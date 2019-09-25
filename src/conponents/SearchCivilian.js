@@ -24,8 +24,7 @@ class SearchCivilian extends Component {
         })
         return (
             <div>
-                <Select options={people}
-                    onChange={this.handleSearch} />
+                <Select options={people} onChange={this.handleSearch} />
                     {/* onChange={opt => console.log(opt.label, opt.value)} /> */}
               
             </div>
