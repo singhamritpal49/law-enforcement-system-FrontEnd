@@ -10,8 +10,7 @@ class TicketForm extends Component {
         vehicle_license_plate: '',
         ticket_type: '',
         descripition: '',
-        civilians: [],
-        officer_id: ''
+        civilians: []
     }
 
     componentDidMount() {
@@ -20,6 +19,10 @@ class TicketForm extends Component {
             .then(civilians => this.setState({
                 civilians: civilians
             }))
+        // this.setState({
+        //     officer_id: this.props.officerid
+        // })
+
     }
 
     handleCivilian = (ssn) => {
@@ -40,18 +43,25 @@ class TicketForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+
     }
 
     handleSubmit = (event) => {
-        console.log(event)
+        event.preventDefault()
+        const someNewObject = {
+            ...this.state,
+            officer_id: this.props.officerid
+        }
+        console.log(someNewObject)
     }
 
 
+
     render() {
-        console.log(this.props)
+
 
         let curr = new Date();
-        curr.setDate(curr.getDate() + 1 );
+        curr.setDate(curr.getDate() + 1);
         let date = curr.toISOString().substr(0, 10);
         // console.log(this.props)
         return (
@@ -63,16 +73,16 @@ class TicketForm extends Component {
                 </div>
                 <form id="login" onSubmit={this.handleSubmit}>
                     <h1>Search Using Name or SSN</h1> <SearchCivilian handleCivilian={this.handleCivilian} civilians={this.state.civilians} />
-                    
+
                     {/* <input onChange={this.handleChange} value={this.state.officer_id} type="hidden" officer_id={this.props.officerid} name="officer_id"/> */}
-                    
-                    
+
+
                     {/* <label for="date">Date </label> */}
                     <input onChange={this.handleChange} type="date" name="date" id="date" defaultValue={date} name="date" />
                     <br />
 
                     <label >Time </label>
-                    <input value={this.state.time} onChange={this.handleChange} type="time"  id="time" name="time" />
+                    <input value={this.state.time} onChange={this.handleChange} type="time" id="time" name="time" />
                     <br />
 
                     <label for="location">Location </label>
