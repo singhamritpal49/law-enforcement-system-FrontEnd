@@ -66,7 +66,7 @@ class TicketForm extends Component {
 
     render() {
 
-        console.log(this.state);
+        // console.log(this.state);
         let curr = new Date();
         curr.setDate(curr.getDate() + 1);
         let date = curr.toISOString().substr(0, 10);

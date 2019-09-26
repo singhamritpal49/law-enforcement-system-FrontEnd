@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
 import TicketForm from './TicketForm'
-// import Tickets from './Tickets'
+import Tickets from './Tickets'
 
 
 
@@ -10,6 +10,7 @@ class Profile extends Component {
         name: '',
         officerid: '',
         tickets: []
+
     }
 
     componentDidMount() {
@@ -19,10 +20,12 @@ class Profile extends Component {
             }
         })
             .then(data => data.json())
-            .then(user => this.setState({
+            .then(user => {
+                this.setState({
                 name: user.first_name,
-                officerid: user.id
-            }))
+                officerid: user.id,
+                tickets: user.tickets
+            })})
     }
 
     handleClick = () => {
@@ -30,8 +33,13 @@ class Profile extends Component {
         this.props.redirect('login')
     }
 
+
+   
+
+
     render() {
-        // console.log(this.state);
+        // {this.getTicketData() }
+        console.log(this.state);
         return (
             <div>
                 {
@@ -39,9 +47,9 @@ class Profile extends Component {
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
+                {/* <Tickets officerid={this.state.officerid} /> */}
                 <TicketForm officerid={this.state.officerid} />
                 <button onClick={this.handleClick}>Log Out</button>
-                {/* <Tickets officerid={this.state.officerid} /> */}
             </div>
 
 
