@@ -9,7 +9,7 @@ class TicketForm extends Component {
         location: '',
         vehicle_license_plate: '',
         ticket_type: '',
-        descripition: '',
+        description: '',
         civilians: []
     }
 
@@ -53,13 +53,20 @@ class TicketForm extends Component {
             officer_id: this.props.officerid
         }
         console.log(someNewObject)
+        fetch("http://localhost:3000/tickets", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(someNewObject)
+        })
     }
 
 
 
     render() {
 
-
+        console.log(this.state);
         let curr = new Date();
         curr.setDate(curr.getDate() + 1);
         let date = curr.toISOString().substr(0, 10);
@@ -94,11 +101,11 @@ class TicketForm extends Component {
                     <br />
 
                     <label for="ticket_type">Ticket Type </label>
-                    <input value={this.state.ticket_type} onChange={this.handleChange} type="text" name="ticket_type" id="ticket_type" name="ticket_type" />
+                    <input value={this.state.ticket_type} onChange={this.handleChange} type="text" id="ticket_type" name="ticket_type" />
                     <br />
 
-                    <p>Descripition:
-                    <textarea value={this.state.descripition} onChange={this.handleChange} name="descripition" rows="5" cols="33" />
+                    <p>Description:
+                    <textarea value={this.state.description} onChange={this.handleChange} name="description" rows="5" cols="33" />
                     </p>
 
                     <input type="submit" value="Submit" />
