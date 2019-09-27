@@ -31,6 +31,8 @@ class Login extends Component {
                 if (data.token) {
                     localStorage.token = data.token
                     this.props.redirect('profile')
+                } else {
+                    alert("INCORRECT")
                 }
             })
     }

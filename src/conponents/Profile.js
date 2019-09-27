@@ -21,6 +21,7 @@ class Profile extends Component {
         })
             .then(data => data.json())
             .then(user => {
+                // console.log(user)
                 this.setState({
                 name: user.first_name,
                 officerid: user.id,
@@ -39,7 +40,7 @@ class Profile extends Component {
 
     render() {
         // {this.getTicketData() }
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div>
                 {
@@ -47,7 +48,7 @@ class Profile extends Component {
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
-                {/* <Tickets officerid={this.state.officerid} /> */}
+                <Tickets tickets={this.state.tickets} />
                 <TicketForm officerid={this.state.officerid} />
                 <button onClick={this.handleClick}>Log Out</button>
             </div>
