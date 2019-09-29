@@ -30,7 +30,8 @@ class Login extends Component {
             .then(data => {
                 if (data.token) {
                     localStorage.token = data.token
-                    this.props.redirect('profile')
+                    // this.props.redirect('profile')
+                    this.props.history.push('/profile')
                 } else {
                     alert("INCORRECT")
                 }

@@ -31,7 +31,9 @@ class Profile extends Component {
 
     handleClick = () => {
         localStorage.clear()
-        this.props.redirect('login')
+        // this.props.redirect('login')
+        this.props.history.push('/')
+
     }
 
 
@@ -40,7 +42,7 @@ class Profile extends Component {
 
     render() {
         // {this.getTicketData() }
-        // console.log(this.state);
+        console.log(this.state);
         return (
             <div>
                 {

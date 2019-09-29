@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from './conponents/Login'
 import Profile from './conponents/Profile'
 import TicketForm from './conponents/TicketForm'
-
+import Error from './conponents/Error'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -12,28 +14,44 @@ class App extends Component {
 
   componentDidMount() {
     if (localStorage.token) {
-      this.redirect('profile')
+      // this.redirect('profile')
+      this.props.history.push('/profile')
+
     }
   }
 
   redirect = (page) => {
-    this.setState({ page: page})
+    this.setState({ page: page })
   }
 
 
 
   render() {
+    // console.log(this.props);
+    return (
 
-    switch (this.state.page) {
-      case 'login':
-        return <Login redirect={this.redirect}/>
-      case 'profile':
-        return <Profile redirect={this.redirect} />
-      case 'ticketform':
-        return <TicketForm />
-      default:
-        return <Login />
-    }
+      <div>
+        <Switch>
+          <Route path={'/profile'} component={Profile} />
+          {/* <Route path={'/ticketform'} component={TicketForm} /> */}
+          <Route exact path={'/'} component={Login} />
+          <Route component={Error} />
+
+        </Switch>
+      </div>
+
+    )
+    //  <Login />
+    // switch (this.state.page) {
+    //   case 'login':
+    //     return <Login redirect={this.redirect}/>
+    //   case 'profile':
+    //     return <Profile redirect={this.redirect} />
+    //   case 'ticketform':
+    //     return <TicketForm />
+    //   default:
+    //     return <Login />
+    // }
 
 
 
@@ -41,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
