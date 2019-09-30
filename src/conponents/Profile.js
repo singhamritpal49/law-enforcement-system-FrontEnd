@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
 import TicketForm from './TicketForm'
-import Tickets from './Tickets'
-
+// import Tickets from './Tickets'
+import TicketCollection from './TicketCollection'
 
 
 class Profile extends Component {
@@ -42,7 +42,7 @@ class Profile extends Component {
 
     render() {
         // {this.getTicketData() }
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div>
                 {
@@ -50,7 +50,7 @@ class Profile extends Component {
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
-                <Tickets tickets={this.state.tickets} />
+                <TicketCollection tickets={this.state.tickets} />
                 <TicketForm officerid={this.state.officerid} />
                 <button onClick={this.handleClick}>Log Out</button>
             </div>

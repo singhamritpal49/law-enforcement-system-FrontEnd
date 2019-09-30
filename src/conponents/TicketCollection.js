@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
+import Ticket from './Ticket'
 
+class TicketCollection extends Component {
 
-class Tickets extends Component {
-state = {
-    showTicketDetail: false,
-    ticketObj: {}
-}
 
 
     handleClick = (event) => {
@@ -15,19 +12,13 @@ state = {
     render() {
         // console.log(this.props);
         const tickets = this.props.tickets.map(ticket => {
-            // console.log(ticket)
-            // return <li
-            //     onClick={this.handleClick}>
-            //     Violation Number : {ticket.case_number}
-            //     Date: {ticket.date}  
-            //     {ticket.id}
-            //     </li>
+        return <Ticket ticket={ticket} key={ticket.id}/>
         })
 
         // console.log(this.state)
         return (
             <div>
-                <h1>Written Tickets</h1>
+                <h1> Wtitten Tickets </h1>
                 <ol>
                     {tickets}
                 </ol>
@@ -36,4 +27,4 @@ state = {
     }
 }
 
-export default Tickets;
+export default TicketCollection;
