@@ -50,8 +50,8 @@ class Profile extends Component {
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
-                <TicketCollection tickets={this.state.tickets} />
                 <TicketForm officerid={this.state.officerid} />
+                <TicketCollection tickets={this.state.tickets} />
                 <button onClick={this.handleClick}>Log Out</button>
             </div>
 
