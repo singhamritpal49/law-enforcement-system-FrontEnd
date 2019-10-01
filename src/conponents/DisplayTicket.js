@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
+import Modal from 'react-responsive-modal';
 
 class DisplayTicket extends Component {
+    state = {
+        open: false
+    }
+
     render() {
         // console.log(this.props)
         return (

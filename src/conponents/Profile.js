@@ -3,6 +3,7 @@ import '../LoginCSS.css';
 import TicketForm from './TicketForm'
 // import Tickets from './Tickets'
 import TicketCollection from './TicketCollection'
+import AddCivilian from './AddCivilian';
 
 
 class Profile extends Component {
@@ -23,10 +24,11 @@ class Profile extends Component {
             .then(user => {
                 // console.log(user)
                 this.setState({
-                name: user.first_name,
-                officerid: user.id,
-                tickets: user.tickets
-            })})
+                    name: user.first_name,
+                    officerid: user.id,
+                    tickets: user.tickets
+                })
+            })
     }
 
     handleClick = () => {
@@ -37,7 +39,7 @@ class Profile extends Component {
     }
 
 
-   
+
 
 
     render() {
@@ -45,6 +47,9 @@ class Profile extends Component {
         // console.log(this.state);
         return (
             <div>
+                <div class="topnav">
+                    <button class="active" onClick={this.handleClick}>Log Out</button>
+                </div>
                 {
                     this.state.name ?
                         <h1>Welcome Officer {this.state.name} </h1> :
@@ -52,7 +57,7 @@ class Profile extends Component {
                 }
                 <TicketForm officerid={this.state.officerid} />
                 <TicketCollection tickets={this.state.tickets} />
-                <button onClick={this.handleClick}>Log Out</button>
+                <AddCivilian />
             </div>
 
 

@@ -170,3 +170,15 @@ input[type=submit] {
   margin: 0 auto;
    width: 800px;
 } */
+li { cursor: pointer; }
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.active {
+  background-color: rgb(189, 189, 189);
+  color: black;
+}
+

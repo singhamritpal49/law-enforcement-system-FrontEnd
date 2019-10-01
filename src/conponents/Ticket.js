@@ -6,9 +6,10 @@ class Ticket extends Component {
     
 
 
- handleClick = (e) => {
+ handleClick = (event) => {
+    //  console.log(event)
      this.props.showInfo()
-    this.props.handleInfo(e)
+    this.props.handleInfo(event)
 
  }  
 
@@ -23,6 +24,7 @@ class Ticket extends Component {
                 <ul onClick={() => this.handleClick(this.props.ticket)}>
                     <li> Case Number: {this.props.ticket.case_number} </li>
                 </ul>
+                
             </div>
             
             

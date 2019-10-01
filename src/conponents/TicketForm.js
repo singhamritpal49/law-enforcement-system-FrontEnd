@@ -47,7 +47,7 @@ class TicketForm extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         const someNewObject = {
             ...this.state,
             officer_id: this.props.officerid
