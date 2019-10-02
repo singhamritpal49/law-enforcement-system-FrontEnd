@@ -54,11 +54,11 @@ class TicketCollection extends Component {
                      (this.state.visible) ?
                  <div>
                  <h2>Case: {this.state.infoObj.case_number}</h2>
-                 <p>Issued Date: {this.state.infoObj.date}</p>
-                 <p>Time: {this.state.infoObj.time}</p>
-                 <p>Type: {this.state.infoObj.ticket_type}</p>
-                 <p>Description: {this.state.infoObj.description} </p>
-                 <p>Location: {this.state.infoObj.location} </p>
+                 <p><b>Issued Date:</b> {this.state.infoObj.date}</p>
+                 <p><b>Time:</b> {this.state.infoObj.time}</p>
+                 <p><b>Type:</b> {this.state.infoObj.ticket_type}</p>
+                 <p><b>Description:</b> {this.state.infoObj.description} </p>
+                 <p><b>Location:</b> {this.state.infoObj.location} </p>
                  <p>License Plate: {this.state.infoObj.vehicle_license_plate} </p>
                  
                  <h2> Issued To </h2> 
@@ -81,7 +81,7 @@ class TicketCollection extends Component {
                  <p>Country: {this.state.infoObj.civilian.country}</p>
                  <p>Cell: {this.state.infoObj.civilian.cell}</p>
                  <p>Home: {this.state.infoObj.civilian.phone}</p>
-                 <button onClick={this.closeModal}>Close</button>
+                 <button class="myButton" onClick={this.closeModal}>Close</button>
              </div>
                 : null   }
                 

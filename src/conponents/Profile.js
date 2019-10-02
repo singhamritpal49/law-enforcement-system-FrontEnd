@@ -48,6 +48,7 @@ class Profile extends Component {
         return (
             <div>
                 <div class="topnav">
+                    
                     <button class="active" onClick={this.handleClick}>Log Out</button>
                 </div>
                 {
