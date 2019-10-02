@@ -47,18 +47,23 @@ class Profile extends Component {
         // console.log(this.state);
         return (
             <div>
-                <div class="topnav">
-                    
-                    <button class="active" onClick={this.handleClick}>Log Out</button>
+                <div className="topnav">
+                <marquee id="tagcolor" >
+                Users of this system are advised they are accessing a restricted information system that is governed by applicable agency policies, local laws, state laws, federal laws, and other regulations. Usage may be monitored, recorded, and subject to audit.
+Unauthorized use of this system is prohibted. Unauthorized users may be subject to criminal and/or penalties. Continuing to use of this system indicates the user's consent to the monitoring and recording of all actions within the system.
+                </marquee>
+                    <button className="active" onClick={this.handleClick}>Log Out</button>
                 </div>
                 {
                     this.state.name ?
                         <h1>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
-                <TicketForm officerid={this.state.officerid} />
-                <TicketCollection tickets={this.state.tickets} />
-                <AddCivilian />
+                <main>
+                 <TicketForm officerid={this.state.officerid} />
+                 <TicketCollection tickets={this.state.tickets} />
+                </main>
+                
             </div>
 
 

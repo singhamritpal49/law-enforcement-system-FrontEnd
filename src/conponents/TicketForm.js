@@ -74,12 +74,10 @@ class TicketForm extends Component {
         // console.log(this.props)
         return (
 
-
+            
             <div className="container">
-                <div>
-
-                </div>
-                <form id="login" onSubmit={this.handleSubmit}>
+               
+                <form id="formforsearch" onSubmit={this.handleSubmit}>
                     <h1>Search Using Name or SSN</h1> <SearchCivilian handleCivilian={this.handleCivilian} civilians={this.state.civilians} />
 
                     {/* <input onChange={this.handleChange} value={this.state.officer_id} type="hidden" officer_id={this.props.officerid} name="officer_id"/> */}

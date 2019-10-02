@@ -43,7 +43,8 @@ class TicketCollection extends Component {
         // console.log(this.state)
         // console.log(this.display())
         return (
-            <div className="container">
+            
+            <div id="writtentickets"  >
                 <h1> Written Tickets </h1>
                 
                 <ol>
@@ -52,37 +53,37 @@ class TicketCollection extends Component {
                 {/* { (this.state.visible) ? <DisplayTicket ticketInfo={this.state.infoObj}/> : null   } */}
                  {
                      (this.state.visible) ?
-                 <div>
-                 <h2>Case: {this.state.infoObj.case_number}</h2>
-                 <p><b>Issued Date:</b> {this.state.infoObj.date}</p>
-                 <p><b>Time:</b> {this.state.infoObj.time}</p>
-                 <p><b>Type:</b> {this.state.infoObj.ticket_type}</p>
-                 <p><b>Description:</b> {this.state.infoObj.description} </p>
-                 <p><b>Location:</b> {this.state.infoObj.location} </p>
-                 <p>License Plate: {this.state.infoObj.vehicle_license_plate} </p>
-                 
-                 <h2> Issued To </h2> 
-                 <p>First Name: {this.state.infoObj.civilian.first_name}</p>
-                 <p>Middle Name: {this.state.infoObj.civilian.middle_name}</p>
-                 <p>Last Name: {this.state.infoObj.civilian.last_name}</p>
-                 <p>Sex: {this.state.infoObj.civilian.sex}</p>
-                 <p>Eye Color: {this.state.infoObj.civilian.eyes}</p>
-                 <p>Height: {this.state.infoObj.civilian.height}</p>
-                 <p>Date of Birth: {this.state.infoObj.civilian.date_of_birth}</p>
-                 <p>Social Security Number: {this.state.infoObj.civilian.social_security_number}</p>
-                 <p>Driver License: {this.state.infoObj.civilian.driver_license}</p>
-                 <p>Driver License Issue Date : {this.state.infoObj.civilian.driver_license_issue_date}</p>
-                 <p>Driver License Expiration Date : {this.state.infoObj.civilian.driver_license_expiration_date}</p>
-                 <p>Driver License Issue State : {this.state.infoObj.civilian.driver_license_issue_state}</p>
-                 <p>Address: {this.state.infoObj.civilian.address1}</p>
-                 <p>City: {this.state.infoObj.civilian.city}</p>
-                 <p>State: {this.state.infoObj.civilian.state}</p>
-                 <p>Zip Code: {this.state.infoObj.civilian.zip}</p>
-                 <p>Country: {this.state.infoObj.civilian.country}</p>
-                 <p>Cell: {this.state.infoObj.civilian.cell}</p>
-                 <p>Home: {this.state.infoObj.civilian.phone}</p>
-                 <button class="myButton" onClick={this.closeModal}>Close</button>
-             </div>
+                    <section>
+                        <h2>Case: {this.state.infoObj.case_number}</h2>
+                        <p><b>Issued Date:</b> {this.state.infoObj.date}</p>
+                        <p><b>Time:</b> {this.state.infoObj.time}</p>
+                        <p><b>Type:</b> {this.state.infoObj.ticket_type}</p>
+                        <p><b>Description:</b> {this.state.infoObj.description} </p>
+                        <p><b>Location:</b> {this.state.infoObj.location} </p>
+                        <p>License Plate: {this.state.infoObj.vehicle_license_plate} </p>
+                        
+                        <h2> Issued To </h2> 
+                        <p>First Name: {this.state.infoObj.civilian.first_name}</p>
+                        <p>Middle Name: {this.state.infoObj.civilian.middle_name}</p>
+                        <p>Last Name: {this.state.infoObj.civilian.last_name}</p>
+                        <p>Sex: {this.state.infoObj.civilian.sex}</p>
+                        <p>Eye Color: {this.state.infoObj.civilian.eyes}</p>
+                        <p>Height: {this.state.infoObj.civilian.height}</p>
+                        <p>Date of Birth: {this.state.infoObj.civilian.date_of_birth}</p>
+                        <p>Social Security Number: {this.state.infoObj.civilian.social_security_number}</p>
+                        <p>Driver License: {this.state.infoObj.civilian.driver_license}</p>
+                        <p>Driver License Issue Date : {this.state.infoObj.civilian.driver_license_issue_date}</p>
+                        <p>Driver License Expiration Date : {this.state.infoObj.civilian.driver_license_expiration_date}</p>
+                        <p>Driver License Issue State : {this.state.infoObj.civilian.driver_license_issue_state}</p>
+                        <p>Address: {this.state.infoObj.civilian.address1}</p>
+                        <p>City: {this.state.infoObj.civilian.city}</p>
+                        <p>State: {this.state.infoObj.civilian.state}</p>
+                        <p>Zip Code: {this.state.infoObj.civilian.zip}</p>
+                        <p>Country: {this.state.infoObj.civilian.country}</p>
+                        <p>Cell: {this.state.infoObj.civilian.cell}</p>
+                        <p>Home: {this.state.infoObj.civilian.phone}</p>
+                        <button class="myButton" onClick={this.closeModal}>Close</button>
+                    </section>
                 : null   }
                 
 

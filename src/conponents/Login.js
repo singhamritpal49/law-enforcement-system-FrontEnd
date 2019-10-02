@@ -33,7 +33,7 @@ class Login extends Component {
                     // this.props.redirect('profile')
                     this.props.history.push('/profile')
                 } else {
-                    alert("INCORRECT")
+                    alert("Invalid Login Credentials")
                 }
             })
     }
