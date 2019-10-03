@@ -1,6 +1,8 @@
 // import Select from 'react-select';
 import React, { Component } from 'react';
 import SearchCivilian from './SearchCivilian'
+import '../form.css';
+
 class TicketForm extends Component {
     state = {
         civilian_id: '',

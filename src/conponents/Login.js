@@ -46,20 +46,22 @@ class Login extends Component {
                 <div id="logo">
                     <img src="./logo.png" alt="" />
                 </div>
-                <div >
 
-                    <form id="login" className="buttonholder" onSubmit={this.handleSubmit} >
-                        <h1 id="loginheader">User Login</h1>
-                        <input onChange={this.handleChange} value={this.state.badge} type="text" name="badge" id="badge" required placeholder="User ID" name="badge"></input>
+                <div class="login">
+                <div class="login-triangle">
+
+                        <h2 class="login-header">User Login</h2>
+                    <form class="login-container"   onSubmit={this.handleSubmit} >
+                        <p><input onChange={this.handleChange} value={this.state.badge} type="text" name="badge" id="badge" required placeholder="User ID" name="badge"></input></p>
                         <br />
-                        <input onChange={this.handleChange} value={this.state.password} type="password" name="password" id="password" required placeholder="Password" name="password" ></input>
+                        <p><input onChange={this.handleChange} value={this.state.password} type="password" name="password" id="password" required placeholder="Password" name="password" ></input></p>
                         <br />
-                        <input type="submit" value="Submit" />
+                        <p><input type="submit" value="Submit" /></p>
 
                     </form>
 
                 </div>
-
+                </div>
             </div>
 
 
