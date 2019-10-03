@@ -21,8 +21,8 @@ class Ticket extends Component {
         return (
             
             <div>
-                <ul onClick={() => this.handleClick(this.props.ticket)}>
-                    <li> Case Number: {this.props.ticket.case_number} </li>
+                <ul  onClick={() => this.handleClick(this.props.ticket)}>
+                    <li class="cool-link" > Case Number: {this.props.ticket.case_number} </li>
                 </ul>
                 
             </div>

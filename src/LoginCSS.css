@@ -297,10 +297,45 @@ li { cursor: pointer; }
   border-bottom-color: #28d;
 }
 
-ul > li {
+/* ul > li {
   opacity: 1.0;
 }
 
 ul:hover > li:not(:hover) {
   opacity: 0.5;
+} */
+
+
+
+
+li {
+  /* margin-bottom: 10px; */
+  font-family: 'Monda', sans-serif;
+
+  font-size: 18px
+}
+
+.cool-link {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.cool-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width .3s;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+
 }

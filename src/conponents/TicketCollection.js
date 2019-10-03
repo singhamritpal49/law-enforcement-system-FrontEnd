@@ -45,7 +45,7 @@ class TicketCollection extends Component {
         return (
             
             <div id="writtentickets"  >
-                <h1> Written Tickets </h1>
+                <h1> Issued Violations</h1>
                 
                 <ol>
                     {tickets}
