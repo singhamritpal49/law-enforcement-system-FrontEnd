@@ -83,7 +83,7 @@ class TicketForm extends Component {
                     {/* <input onChange={this.handleChange} value={this.state.officer_id} type="hidden" officer_id={this.props.officerid} name="officer_id"/> */}
 
 
-                    {/* <label for="date">Date </label> */}
+                    <label for="date">Date </label>
                     <input onChange={this.handleChange} type="date" name="date" id="date" defaultValue={date} name="date" />
                     <br />
 

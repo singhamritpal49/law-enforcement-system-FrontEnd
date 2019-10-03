@@ -56,7 +56,7 @@ Unauthorized use of this system is prohibted. Unauthorized users may be subject 
                 </div>
                 {
                     this.state.name ?
-                        <h1>Welcome Officer {this.state.name} </h1> :
+                        <h1 style={{background: 'white'}}>Welcome Officer {this.state.name} </h1> :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
                 <main>
