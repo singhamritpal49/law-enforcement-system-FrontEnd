@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../LoginCSS.css';
+import {Link } from 'react-router-dom'
 
 class Error extends Component {
     render() {
@@ -14,6 +15,11 @@ class Error extends Component {
                 </p>
                 <br />
                 <p> <i>For security purposes your IP address 102.312.11.1  has been logged  </i> </p>
+                <Link to="/">
+     <button type="button">
+          Login Page
+     </button>
+ </Link>
             </div>
         );
     }

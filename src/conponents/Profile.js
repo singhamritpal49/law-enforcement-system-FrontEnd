@@ -4,6 +4,7 @@ import TicketForm from './TicketForm'
 // import Tickets from './Tickets'
 import TicketCollection from './TicketCollection'
 import AddCivilian from './AddCivilian';
+import Clock from 'react-live-clock';
 
 
 class Profile extends Component {
@@ -52,11 +53,12 @@ class Profile extends Component {
                 Users of this system are advised they are accessing a restricted information system that is governed by applicable agency policies, local laws, state laws, federal laws, and other regulations. Usage may be monitored, recorded, and subject to audit.
 Unauthorized use of this system is prohibted. Unauthorized users may be subject to criminal and/or penalties. Continuing to use of this system indicates the user's consent to the monitoring and recording of all actions within the system.
                 </marquee>
-                    <button className="active" onClick={this.handleClick}>Log Out</button>
+                    <button className="butn" onClick={this.handleClick}>Log Out</button>
                 </div>
+                
                 {
                     this.state.name ?
-                        <h1 style={{background: 'white'}}>Welcome Officer {this.state.name} </h1> :
+                        <h1 style={{background: 'white'}}>Welcome Officer {this.state.name} <span id="officertime"><Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Eastren'} /> </span> </h1>  :
                         <div id="login" className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 }
                 <main>

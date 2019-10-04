@@ -339,3 +339,33 @@ h1 {
   font-family: 'Cinzel', serif;
 
 }
+
+#officertime {
+  position: relative;
+  left: 58%
+}
+
+.butn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 18px;
+  padding-right: 21px;
+  padding-left: 21px;
+  background: #f3f3f3;
+  text-decoration: none;
+  position: relative;
+  left: 91.5%;
+}
+
+.butn:hover {
+  background: #516069;
+  background-image: -webkit-linear-gradient(top, #516069, #3498db);
+  background-image: -moz-linear-gradient(top, #516069, #3498db);
+  background-image: -ms-linear-gradient(top, #516069, #3498db);
+  background-image: -o-linear-gradient(top, #516069, #3498db);
+  background-image: linear-gradient(to bottom, #516069, #3498db);
+  text-decoration: none;
+}
